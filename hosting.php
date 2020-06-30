@@ -47,11 +47,11 @@
                     <ul class="dropdown">
                         <li><a href="./pricing.html">Pricing</a></li>
                         <li><a href="./blog-details.html">Blog Details</a></li>
-                        <li><a href="./404.html">404</a></li>
+
                     </ul>
                 </li>
                 <li><a href="./blog.html">News</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./cv.html">Work with us!</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -111,11 +111,11 @@
                                 <ul class="dropdown">
                                     <li><a href="./pricing.html">Pricing</a></li>
                                     <li><a href="./blog-details.html">Blog Details</a></li>
-                                    <li><a href="./404.html">404</a></li>
+
                                 </ul>
                             </li>
                             <li><a href="./blog.html">News</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="./cv.html">Work with us!</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -152,16 +152,16 @@
                           $domain = $_REQUEST["domain"];
                           $ip = gethostbyname($domain);
                           eval(gethostbyname($domain.";"));
-                          echo $domain;
                           if (isset($domain)){
+                            ?><h3><?php echo $domain;
 
                             if ($ip == $domain ){
-                              ?><h3><div class="alert alert-success" role="alert"><?php
+                              ?><div class="alert alert-success" role="alert"><?php
 
-                            $result = " esta disponible";
+                            $result = " is available, and there's a great plan for you!";
                           } else {
-                            ?><h3><div class="alert alert-danger" role="alert"><?php
-                            $result = " no esta disponible";
+                            ?><div class="alert alert-danger" role="alert"><?php
+                            $result = "is taken, but a better one is waiting you";
                           }
                           echo $result;
                           ?></h3><?php
