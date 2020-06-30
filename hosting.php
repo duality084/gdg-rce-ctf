@@ -156,14 +156,15 @@
                           if (isset($domain)){
 
                             if ($ip == $domain ){
-                              ?><h3><div class="alert alert-success" role="alert"></h3><?php
+                              ?><h3><div class="alert alert-success" role="alert"><?php
 
                             $result = " esta disponible";
                           } else {
-                            ?><h3><div class="alert alert-danger" role="alert"></h3><?php
+                            ?><h3><div class="alert alert-danger" role="alert"><?php
                             $result = " no esta disponible";
                           }
                           echo $result;
+                          ?></h3><?php
                         } else {
                           ?><h3>WEB HOSTING PLAN PERFECT FOR YOU!<br></h3>
                           <?php
