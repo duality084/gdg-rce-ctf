@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$message = ''; 
+$message = '';
 if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
 {
   if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK)
@@ -26,11 +26,11 @@ if (isset($_POST['uploadBtn']) && $_POST['uploadBtn'] == 'Upload')
       $uploadFileDir = './cv/';
       $dest_path = $uploadFileDir . $fileName;
 
-      if(move_uploaded_file($fileTmpPath, $dest_path)) 
+      if(move_uploaded_file($fileTmpPath, $dest_path))
       {
         $message ='File is successfully uploaded to ' . $dest_path;
       }
-      else 
+      else
       {
         $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
       }
