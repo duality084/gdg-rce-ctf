@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>DEERHOST | Template</title>
-
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
 
@@ -97,7 +97,7 @@
       <div class="row">
         <div class="col-lg-3 col-md-3">
           <div class="header__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+            <a href="./index.html"><img src="img/logo1.png" alt=""></a>
           </div>
         </div>
         <div class="col-lg-9 col-md-9">
@@ -162,6 +162,14 @@
                     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                   </div>
                   </div>
+	        <script>
+            $('#inputGroupFile01').on('change',function(){
+                //get the file name
+                var fileName = $(this).val();
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+        </script>
               <div class="col-6 ">
                 <button type="submit" name="uploadBtn" value="Upload" class="site-btn">Send Resume</button>
               </div>
