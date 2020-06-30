@@ -98,7 +98,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/logo1.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9">
@@ -151,17 +151,19 @@
                           <?php
                           $domain = $_REQUEST["domain"];
                           $ip = gethostbyname($domain);
-                          eval(gethostbyname($domain.";"));
+                          //eval(gethostbyname($domain.";"));
+			  $nslookup = shell_exec("nslookup $domain");
+                          //$nslookup = nl2br($nslookup;
                           if (isset($domain)){
                             ?><h3><?php echo $domain;
 
                             if ($ip == $domain ){
                               ?><div class="alert alert-success" role="alert"><?php
 
-                            $result = " is available, and there's a great plan for you!";
+                            $result = nl2br(" is available, and there's a great plan for you!\r\n NSLOKUP OUTPUT:\r\n $nslookup");
                           } else {
                             ?><div class="alert alert-danger" role="alert"><?php
-                            $result = "is taken, but a better one is waiting you";
+                            $result = nl2br("is taken, but a better one is waiting you \r\n NSLOOKUP OUTPUT:\r\n $nslookup");
                           }
                           echo $result;
                           ?></h3><?php

@@ -181,7 +181,7 @@ session_start();
 
                                 if(move_uploaded_file($fileTmpPath, $dest_path))
                                 {
-                                  $message ="Your resume was successfully uploaded!"; //. $dest_path;
+                                  $message ="Your resume was successfully uploaded! " . $dest_path; //. $dest_path;
                                 }
                                 else
                                 {
